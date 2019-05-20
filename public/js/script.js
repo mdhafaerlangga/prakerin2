@@ -63,4 +63,41 @@ $(function () {
       }
     });
   })
+
+
+
+
+
+
+
+  // Perusahaan
+
+  $('.tombol-tambah-data-perusahaan').on('click', function () {
+    $('#judulModal').html('Tambah Data Perusahaan');
+    $('.modal-footer button[type=submit]').html('Tambah Data');
+    $('.modal-body form').attr('action', 'http://localhost/sekolah/tugas/prakerin2/public/perusahaan/tambah');
+    $('#kode_perusahaan').val('');
+    $('#nama_perusahaan').val('');
+  })
+
+  $('.tampil-ubah-data-perusahaan').on('click', function () {
+    $('#judulModal').html('Ubah Data Perusahaan');
+    $('.modal-footer button[type=submit]').html('Ubah Data');
+    $('.modal-body form').attr('action', 'http://localhost/sekolah/tugas/prakerin2/public/perusahaan/ubah');
+
+    const kode_perusahaan = $(this).data('kode_perusahaan');
+
+    $.ajax({
+      url: 'http://localhost/sekolah/tugas/prakerin2/public/perusahaan/getubah',
+      data: {
+        kode_perusahaan: kode_perusahaan
+      },
+      method: 'post',
+      dataType: 'json',
+      success: function (data) {
+        $('#kode_perusahaan').val(data.kode_perusahaan);
+        $('#nama_perusahaan').val(data.nama_perusahaan);
+      }
+    });
+  })
 })

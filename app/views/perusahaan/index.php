@@ -78,8 +78,8 @@
       <div class="modal-body">
         <form action="<?=BASEURL;?>/perusahaan/tambah" method="post">
           <div class="form-group">
-            <label for="kd_perusahaan"></label>
-            <input type="number" class="form-control" id="kd_perusahaan" name="kd_perusahaan"
+            <label for="kode_perusahaan">Kode Perusahaan</label>
+            <input type="number" class="form-control" id="kode_perusahaan" name="kode_perusahaan"
               placeholder="Isi kode perusahaan...">
           </div>
           <div class="form-group">

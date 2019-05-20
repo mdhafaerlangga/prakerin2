@@ -13,9 +13,9 @@ class Perusahaan_model{
     return $this->db->resultSet();
   }
   
-  public function getPerusahaanByKodePerusahaan($kd_perusahaan){
-    $this->db->query('SELECT * FROM '.$this->table.' WHERE kode_peruhaan=:kd_perusahaan');
-    $this->db->bind('kode_perusahaan', $kd_perusahaan);
+  public function getPerusahaanByKodePerusahaan($kode_perusahaan){
+    $this->db->query('SELECT * FROM '.$this->table.' WHERE kode_perusahaan=:kode_perusahaan');
+    $this->db->bind('kode_perusahaan', $kode_perusahaan);
     return $this->db->single();
   }
 
@@ -23,10 +23,10 @@ class Perusahaan_model{
     $query = "INSERT INTO perusahaan
     (kode_perusahaan, nama_perusahaan)
     VALUES 
-    (:kd_perusahaan, :nama_perusahaan)";
+    (:kode_perusahaan, :nama_perusahaan)";
 
     $this->db->query($query);
-    $this->db->bind('kode_perusahaan', $data['kd_perusahaan']);
+    $this->db->bind('kode_perusahaan', $data['kode_perusahaan']);
     $this->db->bind('nama_perusahaan', $data['nama_perusahaan']);
 
     $this->db->execute();
@@ -34,10 +34,10 @@ class Perusahaan_model{
     return $this->db->rowCount();
   }
 
-  public function hapusDataPerusahaan($kd_perusahaan){
-    $query = "DELETE FROM perusahaan WHERE kode_perusahaan = :kd_perusahaan";
+  public function hapusDataPerusahaan($kode_perusahaan){
+    $query = "DELETE FROM perusahaan WHERE kode_perusahaan = :kode_perusahaan";
     $this->db->query($query);
-    $this->db->bind('kode_perusahaan', $kd_perusahaan);
+    $this->db->bind('kode_perusahaan', $kode_perusahaan);
 
     $this->db->execute();
 
@@ -47,10 +47,10 @@ class Perusahaan_model{
   public function ubahDataPerusahaan($data){
     $query = "UPDATE perusahaan SET
       nama_perusahaan = :nama_perusahaan
-      WHERE kode_perusahaan = :kd_perusahaan";
+      WHERE kode_perusahaan = :kode_perusahaan";
 
     $this->db->query($query);
-    $this->db->bind('kode_perusahaan', $data['kd_perusahaan']);
+    $this->db->bind('kode_perusahaan', $data['kode_perusahaan']);
     $this->db->bind('nama_perusahaan', $data['nama_perusahaan']);
     $this->db->execute();
 

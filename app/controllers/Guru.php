@@ -14,7 +14,7 @@ class Guru extends Controller{
 
   public function detail($nip){
     $data['judul'] = 'Detail Guru';
-    $data['guru'] = $this->model('Guru_model')->getGuruByNis($nip);
+    $data['guru'] = $this->model('Guru_model')->getGuruByNip($nip);
 
     $this->view('templates/header', $data);
     $this->view('guru/detail', $data);
@@ -23,11 +23,11 @@ class Guru extends Controller{
 
   public function tambah(){
     if ($this->model('Guru_model')->tambahDataGuru($_POST) > 0){
-      Flasher::setFlash('berhasil', ' ditambahkan', 'success');
+      Flasher::setFlash('berhasil', ' ditambahkan', 'success', $this->flashtag);
       header('location: '.BASEURL.'/guru');
       exit;
     } else {
-      Flasher::setFlash('gagal', ' ditambahkan', 'danger');
+      Flasher::setFlash('gagal', ' ditambahkan', 'danger', $this->flashtag);
       header('location: '.BASEURL.'/guru');
       exit;
     }

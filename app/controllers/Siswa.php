@@ -51,11 +51,11 @@ class Siswa extends Controller{
 
   public function ubah(){
     if ($this->model('Siswa_model')->ubahDataSiswa($_POST) > 0){
-      Flasher::setFlash('berhasil', 'diubah', 'success');
+      Flasher::setFlash('berhasil', 'diubah', 'success', $this->flashtag);
       header('location: '.BASEURL.'/siswa');
       exit;
     } else {
-      Flasher::setFlash('gagal', 'diubah', 'danger');
+      Flasher::setFlash('gagal', 'diubah', 'danger', $this->flashtag);
       header('location: '.BASEURL.'/siswa');
       exit;
     }
