@@ -1,6 +1,8 @@
 <?php
 
 class Siswa extends Controller{
+  private $flashtag = 'siswa';
+
   public function index(){
     $data['judul'] = 'Data Siswa';
     $data['siswa'] = $this->model('Siswa_model')->getAllSiswa();
@@ -21,11 +23,11 @@ class Siswa extends Controller{
 
   public function tambah(){
     if ($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0){
-      Flasher::setFlash('berhasil', ' ditambahkan', 'success');
+      Flasher::setFlash('berhasil', ' ditambahkan', 'success', $this->flashtag);
       header('location: '.BASEURL.'/siswa');
       exit;
     } else {
-      Flasher::setFlash('gagal', ' ditambahkan', 'danger');
+      Flasher::setFlash('gagal', ' ditambahkan', 'danger', $this->flashtag);
       header('location: '.BASEURL.'/siswa');
       exit;
     }
@@ -33,11 +35,11 @@ class Siswa extends Controller{
 
   public function hapus($nis){
     if ($this->model('Siswa_model')->hapusDataSiswa($nis) > 0){
-      Flasher::setFlash('berhasil', ' dihapus', 'success');
+      Flasher::setFlash('berhasil', ' dihapus', 'success', $this->flashtag);
       header('location: '.BASEURL.'/siswa');
       exit;
     } else {
-      Flasher::setFlash('gagal', ' dihapus', 'danger');
+      Flasher::setFlash('gagal', ' dihapus', 'danger', $this->flashtag);
       header('location: '.BASEURL.'/siswa');
       exit;
     }

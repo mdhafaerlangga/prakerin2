@@ -1,8 +1,10 @@
 <?php
 
 class Guru extends Controller{
+  private $flashtag = 'guru';
+
   public function index(){
-    $data['judul'] = 'Data ';
+    $data['judul'] = 'Daftar Guru';
     $data['guru'] = $this->model('Guru_model')->getAllGuru();
 
     $this->view('templates/header', $data);
@@ -33,11 +35,11 @@ class Guru extends Controller{
 
   public function hapus($nip){
     if ($this->model('Guru_model')->hapusDataGuru($nip) > 0){
-      Flasher::setFlash('berhasil', ' dihapus', 'success');
+      Flasher::setFlash('berhasil', ' dihapus', 'success', $this->flashtag);
       header('location: '.BASEURL.'/guru');
       exit;
     } else {
-      Flasher::setFlash('gagal', ' dihapus', 'danger');
+      Flasher::setFlash('gagal', ' dihapus', 'danger', $this->flashtag);
       header('location: '.BASEURL.'/guru');
       exit;
     }
@@ -49,11 +51,11 @@ class Guru extends Controller{
 
   public function ubah(){
     if ($this->model('Guru_model')->ubahDataGuru($_POST) > 0){
-      Flasher::setFlash('berhasil', 'diubah', 'success');
+      Flasher::setFlash('berhasil', 'diubah', 'success', $this->flashtag);
       header('location: '.BASEURL.'/guru');
       exit;
     } else {
-      Flasher::setFlash('gagal', 'diubah', 'danger');
+      Flasher::setFlash('gagal', 'diubah', 'danger', $this->flashtag);
       header('location: '.BASEURL.'/guru');
       exit;
     }
