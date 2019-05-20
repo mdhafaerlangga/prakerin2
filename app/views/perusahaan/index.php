@@ -37,7 +37,7 @@
       <table class="table table-hover shadow">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">NIP</th>
+            <th scope="col">Kode</th>
             <th scope="col">Nama</th>
             <th scope="col">Opsi</th>
           </tr>
