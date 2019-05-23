@@ -50,7 +50,7 @@ class Prakerin extends Controller{
   }
   
   public function getUbah(){
-    echo json_encode($this->model('Prakerin_model')->getPrakerinByNip($_POST['nip']));
+    echo json_encode($this->model('Prakerin_model')->getPrakerinById($_POST['id']));
   }
 
   public function ubah(){

@@ -59,7 +59,7 @@
                 <a href="#" type="button" class="btn btn-info">Detail</a>
                 <a href=" <?=BASEURL; ?>/prakerin/ubah/<?=$prakerin['id_prakerin']; ?>" type="button"
                   class="btn btn-success tampil-ubah-data-prakerin" data-toggle="modal" data-target="#contohModal"
-                  data-nis="<?=$prakerin['id_prakerin']; ?>">Edit</a>
+                  data-id="<?=$prakerin['id_prakerin']; ?>">Edit</a>
                 <a href="<?=BASEURL; ?>/prakerin/hapus/<?=$prakerin['id_prakerin']; ?>" type="button"
                   class="btn btn-danger" onclick="return confirm('Ingin menghapus?');">Hapus</a>
               </div>
@@ -109,8 +109,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="periode">Periode Prakerin</label>
-            <select class="form-control" name="periode" id="periode">
+            <label for="periode_prakerin">Periode Prakerin</label>
+            <select class="form-control" name="periode_prakerin" id="periode_prakerin">
               <option value="Jan - Mar">Januari - Maret</option>
               <option value="Apr - Jun">April - Juni</option>
               <option value="Jul - Sep">Juli - September</option>

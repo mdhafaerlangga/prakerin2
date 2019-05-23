@@ -21,13 +21,15 @@ class Prakerin_model{
 
   public function tambahDataPrakerin($data){
     $query = "INSERT INTO prakerin
-    (id_prakerin, nama_guru)
+    (nis, nip, kode_perusahaan, periode_prakerin)
     VALUES 
-    (:id, :nama_guru)";
+    (:nis, :nip, :kode_perusahaan, :periode_prakerin)";
 
     $this->db->query($query);
-    $this->db->bind('id_prakerin', $data['id']);
-    $this->db->bind('nama_guru', $data['nama_guru']);
+    $this->db->bind('nis', $data['nis']);
+    $this->db->bind('nip', $data['nip']);
+    $this->db->bind('kode_perusahaan', $data['kode_perusahaan']);
+    $this->db->bind('periode_prakerin', $data['periode_prakerin']);
 
     $this->db->execute();
 

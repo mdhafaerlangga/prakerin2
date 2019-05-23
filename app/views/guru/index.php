@@ -52,7 +52,7 @@
                 <a href="#" type="button" class="btn btn-info">Detail</a>
                 <a href=" <?=BASEURL; ?>/guru/ubah/<?=$guru['nip']; ?>" type="button"
                   class="btn btn-success tampil-ubah-data-guru" data-toggle="modal" data-target="#contohModal"
-                  data-nis="<?=$guru['nip']; ?>">Edit</a>
+                  data-nip="<?=$guru['nip']; ?>">Edit</a>
                 <a href="<?=BASEURL; ?>/guru/hapus/<?=$guru['nip']; ?>" type="button" class="btn btn-danger"
                   onclick="return confirm('Ingin menghapus?');">Hapus</a>
               </div>
@@ -79,11 +79,11 @@
         <form action="<?=BASEURL;?>/guru/tambah" method="post">
           <div class="form-group">
             <label for="nip">NIP</label>
-            <input type="number" class="form-control" id="nip" name="nip" placeholder="Isi nip...">
+            <input type="number" class="form-control" id="nip" name="nip" placeholder="">
           </div>
           <div class="form-group">
             <label for="nama">Nama</label>
-            <input type="text" class="form-control" id="nama_guru" name="nama_guru" placeholder="Isi Nama...">
+            <input type="text" class="form-control" id="nama_guru" name="nama_guru" placeholder="">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

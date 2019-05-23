@@ -58,15 +58,12 @@ $(function () {
       method: 'post',
       dataType: 'json',
       success: function (data) {
+        console.log("OK");
         $('#nip').val(data.nip);
         $('#nama_guru').val(data.nama_guru);
       }
     });
   })
-
-
-
-
 
 
 
@@ -85,18 +82,52 @@ $(function () {
     $('.modal-footer button[type=submit]').html('Ubah Data');
     $('.modal-body form').attr('action', 'http://localhost/sekolah/tugas/prakerin2/public/perusahaan/ubah');
 
-    const kode_perusahaan = $(this).data('kode_perusahaan');
+    const kode_perusahaan = $(this).data('kode');
 
     $.ajax({
       url: 'http://localhost/sekolah/tugas/prakerin2/public/perusahaan/getubah',
       data: {
-        kode_perusahaan: kode_perusahaan
+        kode: kode_perusahaan
       },
       method: 'post',
       dataType: 'json',
       success: function (data) {
         $('#kode_perusahaan').val(data.kode_perusahaan);
         $('#nama_perusahaan').val(data.nama_perusahaan);
+      }
+    });
+  })
+
+
+
+  // Prakerin
+
+  $('.tombol-tambah-data-prakerin').on('click', function () {
+    $('#judulModal').html('Tambah Data Prakerin');
+    $('.modal-footer button[type=submit]').html('Tambah Data');
+    $('.modal-body form').attr('action', 'http://localhost/sekolah/tugas/prakerin2/public/prakerin/tambah');
+    console.log("OK");
+  })
+
+  $('.tampil-ubah-data-prakerin').on('click', function () {
+    $('#judulModal').html('Ubah Data Prakerin');
+    $('.modal-footer button[type=submit]').html('Ubah Data');
+    $('.modal-body form').attr('action', 'http://localhost/sekolah/tugas/prakerin2/public/prakerin/ubah');
+
+    const id = $(this).data('id');
+
+    $.ajax({
+      url: 'http://localhost/sekolah/tugas/prakerin2/public/prakerin/getubah',
+      data: {
+        id: id
+      },
+      method: 'post',
+      dataType: 'json',
+      success: function (data) {
+        $('#nis').val(data.nis);
+        $('#nip').val(data.nip);
+        $('#kode_perusahaan').val(data.kode_perusahaan);
+        $('#periode_prakerin').val(data.periode_prakerin);
       }
     });
   })

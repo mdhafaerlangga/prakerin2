@@ -46,7 +46,7 @@ class Perusahaan extends Controller{
   }
   
   public function getUbah(){
-    echo json_encode($this->model('Perusahaan_model')->getPerusahaanByNip($_POST['kode_perusahaan']));
+    echo json_encode($this->model('Perusahaan_model')->getPerusahaanByKodePerusahaan($_POST['kode']));
   }
 
   public function ubah(){

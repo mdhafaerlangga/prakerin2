@@ -50,9 +50,9 @@
             <td>
               <div class="btn-group" role="group" aria-label="Basic example">
                 <a href="#" type="button" class="btn btn-info">Detail</a>
-                <a href=" <?=BASEURL; ?>/perusahaan/ubah/<?=$perusahaan['kode_perusahaan']; ?>" type="button"
+                <a href="<?=BASEURL; ?>/perusahaan/ubah/<?=$perusahaan['kode_perusahaan']; ?>" type="button"
                   class="btn btn-success tampil-ubah-data-perusahaan" data-toggle="modal" data-target="#contohModal"
-                  data-nis="<?=$perusahaan['kode_perusahaan']; ?>">Edit</a>
+                  data-kode="<?=$perusahaan['kode_perusahaan']; ?>">Edit</a>
                 <a href="<?=BASEURL; ?>/perusahaan/hapus/<?=$perusahaan['kode_perusahaan']; ?>" type="button"
                   class="btn btn-danger" onclick="return confirm('Ingin menghapus?');">Hapus</a>
               </div>
@@ -79,13 +79,11 @@
         <form action="<?=BASEURL;?>/perusahaan/tambah" method="post">
           <div class="form-group">
             <label for="kode_perusahaan">Kode Perusahaan</label>
-            <input type="number" class="form-control" id="kode_perusahaan" name="kode_perusahaan"
-              placeholder="Isi kode perusahaan...">
+            <input type="number" class="form-control" id="kode_perusahaan" name="kode_perusahaan" placeholder="">
           </div>
           <div class="form-group">
             <label for="nama_perusahaan">Nama</label>
-            <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan"
-              placeholder="Isi Nama...">
+            <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan" placeholder="">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
