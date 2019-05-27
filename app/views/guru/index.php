@@ -48,8 +48,8 @@
             <td><?=$guru['nip']; ?></td>
             <td><?=$guru['nama_guru']; ?></td>
             <td>
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <a href="#" type="button" class="btn btn-info">Detail</a>
+              <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                <a href="<?=BASEURL; ?>/guru/detail/<?=$guru['nip']; ?>" type="button" class="btn btn-info">Detail</a>
                 <a href=" <?=BASEURL; ?>/guru/ubah/<?=$guru['nip']; ?>" type="button"
                   class="btn btn-success tampil-ubah-data-guru" data-toggle="modal" data-target="#contohModal"
                   data-nip="<?=$guru['nip']; ?>">Edit</a>

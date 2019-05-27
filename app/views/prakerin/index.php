@@ -37,7 +37,6 @@
       <table class="table table-hover shadow">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">#</th>
             <th scope="col">NIS</th>
             <th scope="col">NIP</th>
             <th scope="col">Kode PT.</th>
@@ -48,20 +47,17 @@
         <tbody>
           <?php foreach ($data['prakerin'] as $prakerin): ?>
           <tr>
-
-            <td><?=$prakerin['id_prakerin']; ?></td>
             <td><?=$prakerin['nis']; ?></td>
             <td><?=$prakerin['nip']; ?></td>
             <td><?=$prakerin['kode_perusahaan']; ?></td>
             <td><?=$prakerin['periode_prakerin']; ?></td>
             <td>
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <a href="#" type="button" class="btn btn-info">Detail</a>
-                <a href=" <?=BASEURL; ?>/prakerin/ubah/<?=$prakerin['id_prakerin']; ?>" type="button"
+              <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                <a href=" <?=BASEURL; ?>/prakerin/ubah/<?=$prakerin['nis']; ?>" type="button"
                   class="btn btn-success tampil-ubah-data-prakerin" data-toggle="modal" data-target="#contohModal"
-                  data-id="<?=$prakerin['id_prakerin']; ?>">Edit</a>
-                <a href="<?=BASEURL; ?>/prakerin/hapus/<?=$prakerin['id_prakerin']; ?>" type="button"
-                  class="btn btn-danger" onclick="return confirm('Ingin menghapus?');">Hapus</a>
+                  data-nis="<?=$prakerin['nis']; ?>">Edit</a>
+                <a href="<?=BASEURL; ?>/prakerin/hapus/<?=$prakerin['nis']; ?>" type="button" class="btn btn-danger"
+                  onclick="return confirm('Ingin menghapus?');">Hapus</a>
               </div>
             </td>
           </tr>

@@ -15,6 +15,12 @@ class Siswa extends Controller{
   public function detail($nis){
     $data['judul'] = 'Detail Siswa';
     $data['siswa'] = $this->model('Siswa_model')->getSiswaByNis($nis);
+    
+    $data['prakerin'] = $this->model('Prakerin_model')->getAllPrakerin();
+    $data['perusahaan'] = $this->model('Prakerin_model')->getNamaPerusahaanBy($nis);
+    $data['guru'] = $this->model('Prakerin_model')->getNamaGuruByNis($nis);
+
+
 
     $this->view('templates/header', $data);
     $this->view('siswa/detail', $data);

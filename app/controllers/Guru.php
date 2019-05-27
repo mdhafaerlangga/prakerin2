@@ -15,6 +15,8 @@ class Guru extends Controller{
   public function detail($nip){
     $data['judul'] = 'Detail Guru';
     $data['guru'] = $this->model('Guru_model')->getGuruByNip($nip);
+    
+    $data['database'] = $this->model('Prakerin_model')->selectAllByNip($nip);
 
     $this->view('templates/header', $data);
     $this->view('guru/detail', $data);
@@ -26,6 +28,7 @@ class Guru extends Controller{
       Flasher::setFlash('berhasil', ' ditambahkan', 'success', $this->flashtag);
       header('location: '.BASEURL.'/guru');
       exit;
+      
     } else {
       Flasher::setFlash('gagal', ' ditambahkan', 'danger', $this->flashtag);
       header('location: '.BASEURL.'/guru');

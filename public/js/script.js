@@ -82,12 +82,12 @@ $(function () {
     $('.modal-footer button[type=submit]').html('Ubah Data');
     $('.modal-body form').attr('action', 'http://localhost/sekolah/tugas/prakerin2/public/perusahaan/ubah');
 
-    const kode_perusahaan = $(this).data('kode');
+    const kode_perusahaan = $(this).data('kode_perusahaan');
 
     $.ajax({
       url: 'http://localhost/sekolah/tugas/prakerin2/public/perusahaan/getubah',
       data: {
-        kode: kode_perusahaan
+        kode_perusahaan: kode_perusahaan
       },
       method: 'post',
       dataType: 'json',
@@ -106,7 +106,6 @@ $(function () {
     $('#judulModal').html('Tambah Data Prakerin');
     $('.modal-footer button[type=submit]').html('Tambah Data');
     $('.modal-body form').attr('action', 'http://localhost/sekolah/tugas/prakerin2/public/prakerin/tambah');
-    console.log("OK");
   })
 
   $('.tampil-ubah-data-prakerin').on('click', function () {
@@ -114,12 +113,12 @@ $(function () {
     $('.modal-footer button[type=submit]').html('Ubah Data');
     $('.modal-body form').attr('action', 'http://localhost/sekolah/tugas/prakerin2/public/prakerin/ubah');
 
-    const id = $(this).data('id');
+    const nis = $(this).data('nis');
 
     $.ajax({
       url: 'http://localhost/sekolah/tugas/prakerin2/public/prakerin/getubah',
       data: {
-        id: id
+        nis: nis
       },
       method: 'post',
       dataType: 'json',

@@ -16,9 +16,9 @@ class Prakerin extends Controller{
     $this->view('templates/footer');
   }
 
-  public function detail($id){
+  public function detail($nis){
     $data['judul'] = 'Detail Prakerin';
-    $data['prakerin'] = $this->model('Prakerin_model')->getPrakerinById($id);
+    $data['prakerin'] = $this->model('Prakerin_model')->getPrakerinById($nis);
 
     $this->view('templates/header', $data);
     $this->view('prakerin/detail', $data);
@@ -37,8 +37,8 @@ class Prakerin extends Controller{
     }
   }
 
-  public function hapus($id){
-    if ($this->model('Prakerin_model')->hapusDataPrakerin($id) > 0){
+  public function hapus($nis){
+    if ($this->model('Prakerin_model')->hapusDataPrakerin($nis) > 0){
       Flasher::setFlash('berhasil', ' dihapus', 'success', $this->flashtag);
       header('location: '.BASEURL.'/prakerin');
       exit;
@@ -50,7 +50,7 @@ class Prakerin extends Controller{
   }
   
   public function getUbah(){
-    echo json_encode($this->model('Prakerin_model')->getPrakerinById($_POST['id']));
+    echo json_encode($this->model('Prakerin_model')->getPrakerinByNis($_POST['nis']));
   }
 
   public function ubah(){
@@ -72,5 +72,9 @@ class Prakerin extends Controller{
     $this->view('templates/header', $data);
     $this->view('prakerin/index', $data);
     $this->view('templates/footer');
+  }
+
+  public function getNamaSiswa (){
+    echo json_encode($this->model('Prakerin_model')->getNamaPerusahaanByNip($_POST['nip']));
   }
 }

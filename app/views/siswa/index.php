@@ -48,8 +48,8 @@
             <td><?=$siswa['nis']; ?></td>
             <td><?=$siswa['nama_siswa']; ?></td>
             <td>
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <a href="#" type="button" class="btn btn-info">Detail</a>
+              <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                <a href="<?=BASEURL; ?>/siswa/detail/<?=$siswa['nis']; ?>" type="button" class="btn btn-info">Detail</a>
                 <a href=" <?=BASEURL; ?>/siswa/ubah/<?=$siswa['nis']; ?>" type="button"
                   class="btn btn-success tampil-ubah-data-siswa" data-toggle="modal" data-target="#contohModal"
                   data-nis="<?=$siswa['nis']; ?>">Edit</a>

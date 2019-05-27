@@ -48,8 +48,7 @@
             <td><?=$perusahaan['kode_perusahaan']; ?></td>
             <td><?=$perusahaan['nama_perusahaan']; ?></td>
             <td>
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <a href="#" type="button" class="btn btn-info">Detail</a>
+              <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                 <a href="<?=BASEURL; ?>/perusahaan/ubah/<?=$perusahaan['kode_perusahaan']; ?>" type="button"
                   class="btn btn-success tampil-ubah-data-perusahaan" data-toggle="modal" data-target="#contohModal"
                   data-kode="<?=$perusahaan['kode_perusahaan']; ?>">Edit</a>
